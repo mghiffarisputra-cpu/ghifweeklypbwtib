@@ -1,27 +1,33 @@
- @extends('layouts.main')
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@section('content')
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">WEB TI</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">HOME</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/berita">BERITA</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/profile">PROFILE</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">KONTAK</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <title>Portofolio Laravel</title>
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+
+<body>
+
+    {{-- NAVBAR --}}
+    <nav>
+        <h3>Portofolio</h3>
+
+        <a href="{{ route('home') }}">Home</a>
+        <a href="{{ route('profile') }}">Profile</a>
+        <a href="{{ route('berita') }}">Berita</a>
+    </nav>
+
+    {{-- KONTEN HALAMAN --}}
+    <main>
+    </main>
+
+    {{-- FOOTER --}}
+    <footer>
+        <p>© 2026 M Ghiffari. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,9 +1,7 @@
-@extends('layouts.main')
+<div class="container mt-5">
+    <h1>Profile</h1>
 
-@section('content')
-      <h1>profile</h1>
-      <p>Nama : {{ $name }}</p>
-      <P>Nim  : {{ $nim }}</P>
-      <P>Prodi: {{ $prodi }}</P>
-
-@endsection
+    <p>Nama: M Ghiffari</p>
+    <p>NIM: 13242520064</p>
+    <p>Prodi: Teknologi Informasi</p>
+</div>
