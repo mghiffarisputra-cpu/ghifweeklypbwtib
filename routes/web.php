@@ -1,8 +1,19 @@
+
 <?php
 
-use App\Http\Controllers\PageController;
-
 use Illuminate\Support\Facades\Route;
+use App\Models\Berita;
+
+Route::get('/berita', function () {
+    $beritas = Berita::latest()->get();
+
+    return view('berita.index', compact('beritas'));
+})->name('berita');
+
+
+Route::view('/', 'portfolio')->name('home');
+
+use App\Http\Controllers\PageController;
 
 Route::get('/', function () {
     return view('home');
@@ -47,4 +58,3 @@ Route::get('/profile', function () {
 
     Route::get('/berita', [PageController::class, 'berita'])
     ->name('berita');
-
