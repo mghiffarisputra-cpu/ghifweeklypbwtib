@@ -1,30 +1,11 @@
-<?php
+<div class="profile-detail-item">
+    <p class="mb-0 fw-semibold">Nama: {{ $name ?? 'M Ghiffari' }}</p>
+</div>
 
-namespace App\Http\Controllers;
+<div class="profile-detail-item">
+    <p class="mb-0 fw-semibold">NIM: {{ $nim ?? '13242520064' }}</p>
+</div>
 
-class PageController extends Controller
-{
-    public function home()
-    {
-        return view('home', [
-            'title' => 'Home'
-        ]);
-    }
-
-    public function profile()
-    {
-        return view('profile', [
-            'title' => 'Profile',
-            'name' => 'M Ghiffari',
-            'nim' => '13242520064',
-            'prodi' => 'Teknologi Informasi'
-        ]);
-    }
-
-    public function berita()
-    {
-        return view('berita', [
-            'title' => 'Berita'
-        ]);
-    }
-}
+<div class="profile-detail-item">
+    <p class="mb-0 fw-semibold">Prodi: {{ $prodi ?? 'Teknologi Informasi' }}</p>
+</div>

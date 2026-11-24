@@ -1,7 +1,8 @@
-
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\PageController;
 use App\Models\Berita;
 
 Route::get('/berita', function () {
@@ -10,10 +11,7 @@ Route::get('/berita', function () {
     return view('berita.index', compact('beritas'));
 })->name('berita');
 
-
 Route::view('/', 'portfolio')->name('home');
-
-use App\Http\Controllers\PageController;
 
 Route::get('/', function () {
     return view('home');
@@ -28,19 +26,19 @@ Route::get('/berita', function () {
 })->name('berita');
 
 Route::get('/', function () {
-    return view('home',[
+    return view('home', [
         "title" => "home"
     ]);
 });
 
 Route::get('/Profile', function () {
-    return view('Profile',[
+    return view('Profile', [
         "title" => "profile",
         "name" => "m ghiffari",
         "nim" => "13242520064",
-        "prodi" => "teknologi informasi" ]);
+        "prodi" => "teknologi informasi"
+    ]);
 });
-
 
 Route::get('/profile', function () {
     return view('profile', [
@@ -50,11 +48,8 @@ Route::get('/profile', function () {
     ]);
 });
 
-    Route::get('/', [PageController::class, 'home'])
-    ->name('home');
+Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/profile', [PageController::class, 'profile'])->name('profile');
+Route::get('/berita', [PageController::class, 'berita'])->name('berita');
 
-    Route::get('/profile', [PageController::class, 'profile'])
-    ->name('profile');
-
-    Route::get('/berita', [PageController::class, 'berita'])
-    ->name('berita');
+Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa');
